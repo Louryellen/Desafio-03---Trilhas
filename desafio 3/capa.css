@@ -1,0 +1,84 @@
+/* Importando a fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('imagens/Capa.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+/* Estilos do conteúdo da capa */
+.capa-content {
+    color: white; 
+    text-align: center; 
+    padding: 20px;
+    position: absolute;
+    top: 20%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); 
+}
+
+/* Estilos do botão */
+.capa-content .btn {
+    background-color: #F3541C; 
+    color: white; 
+    padding: 15px 30px;
+    text-decoration: none; 
+    font-size: 1.2em;
+    margin-top: 20px;
+    display: inline-block; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.capa-content .btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+    z-index: -1;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.capa-content .btn:hover {
+    background-color: #F3541C; 
+    transform: scale(1.05); 
+}
+
+/* Efeito de foco no botão */
+.capa-content .btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.5); 
+}
+
+
+.desafio {
+    background-color: #1a309d; /* tom de azul escuro */
+    color: white;
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 32px;
+    padding: 50px 100px;
+    display: inline-block;
+    clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+    text-align: center;
+    background-image: radial-gradient(circle at top left, #1a309d, #1a309d); 
+    margin-top: 220px;
+    margin-left: 16px; 
+  }
+  

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Inscrição</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button id="toggleDarkMode">🌓</button>
+    <div class="container-flex">
+        <!-- retângulo -->
+        <div class="retangulo">
+            <div class="container">
+                <!-- Link para voltar à página anterior -->
+                <div class="voltar">
+                    <a href="login.html">
+                        <img src="imagens/arrow-left-02.png" alt="Seta para voltar">
+                        <span>Voltar</span>
+                    </a>
+                </div>               
+                <h2>Formulário de Inscrição</h2>
+                <p class="descricao">Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
+                <p class="informacoes-participante"><strong>Informações do participante</strong></p>
+                <form action="#" method="post" onsubmit="return mostrarAlerta()">
+                    <div class="campo">
+                        <label for="nome">Nome completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="data_nascimento">Data de nascimento:</label>
+                        <input type="date" id="data_nascimento" name="data_nascimento" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" required oninput="formatarCPF(this)" placeholder="xxx.xxx.xxx-xx">
+                    </div>
+
+                    <script>
+                        function formatarCPF(campo) {
+                            let cpf = campo.value.replace(/\D/g, '');
+                            if (cpf.length <= 11) {
+                                cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{1})/, '$1.$2.$3-$4');
+                            }
+                            campo.value = cpf;
+                        }
+                    </script>
+                    
+                    <div class="campo">
+                        <label for="sexo">Sexo</label>
+                        <select id="sexo" name="sexo" class="custom-select">
+                          <option value="Masculino">Masculino</option>
+                          <option value="Feminino">Feminino</option>
+                          <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+                        
+                    <div class="campo">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone">
+                    </div>
+
+                    <div class="campo">
+                        <label for="documento">Documento de identidade:</label>
+                        <div class="upload-box" onclick="document.getElementById('documento').click();">
+                            <img src="imagens/cloud-upload.png" alt="Ícone de upload">
+                            <p>Clique para selecionar o arquivo</p>
+                        </div>
+                        <input type="file" id="documento" name="documento" accept="image/*, .pdf">
+                    </div>                    
+
+                    <h3 class="enderecoresidencial"> Endereço Residencial</h3>
+
+                    <div class="campo">
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" name="cep" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="rua">Rua:</label>
+                        <input type="text" id="rua" name="rua" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="numero">Número:</label>
+                        <input type="text" id="numero" name="numero" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="estado">Estado:</label>
+                        <input type="text" id="estado" name="estado" required>
+                    </div>
+
+                    <div class="campo">
+                        <div class="campo">
+                            <label for="Comprovante de Residência">Comprovante de Residência</label>
+                            <div class="upload-box" onclick="ComprovantedeResidência.getElementById('Comprovante de Residência').click();">
+                                <img src="imagens/cloud-upload.png" alt="Ícone de upload">
+                                <p class="upload-text">Clique aqui para selecionar o arquivo</p>
+                            </div>
+                            <input type="file" id="Comprovante de Residência" name="Comprovante de Residência" accept="image/*, .pdf">
+                        </div>
+                    </div>
+
+                    <h3>Trilhas de Aprendizagem</h3>
+                    <p>Selecione apenas uma trilha:</p>
+
+                    <div class="trilhas">
+                        <div class="retangulo">
+                            <img src="imagens/figuras de cada trilha/front-end.png" alt="Front-end">
+                            <p>Programação Front-end</p>
+                            <input type="radio" id="front-end" name="trilha" value="front-end" required>
+                        </div>
+
+                        <div class="retangulo">
+                            <img src="imagens/figuras de cada trilha/icon-back.png" alt="Back-end">
+                            <p>Programação Back-end</p>
+                            <input type="radio" id="back-end" name="trilha" value="back-end">
+                        </div>
+
+                        <div class="retangulo">
+                            <img src="imagens/figuras de cada trilha/jogos.png" alt="Jogos">
+                            <p>Programação de Jogos</p>
+                            <input type="radio" id="jogos" name="trilha" value="jogos">
+                        </div>
+
+                        <div class="retangulo">
+                            <img src="imagens/figuras de cada trilha/icon-ux.png" alt="Design">
+                            <p>Design e Experiência</p>
+                            <input type="radio" id="design" name="trilha" value="design">
+                        </div>
+
+                        <div class="retangulo">
+                            <img src="imagens/figuras de cada trilha/dados.png" alt="Dados">
+                            <p>Ciência de Dados</p>
+                            <input type="radio" id="dados" name="trilha" value="dados">
+                        </div>
+                    </div>
+
+                    <!-- Mover para cá os campos ID do Usuário, Senha e o botão de salvar -->
+                    <div class="campo">
+                        <label for="usuario"> Usuário:</label>
+                        <input type="text" id="usuario" name="id_usuario" required>
+                        <span id="id_error" class="error-message"></span> <!-- Mensagem de erro -->
+                    </div>
+
+                    <div class="campo">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" required>
+                        <span id="senha_error" class="error-message"></span> <!-- Mensagem de erro -->
+                    </div>
+
+                    <!-- Botão de salvar -->
+                    <div class="btn-container">
+                        <button type="submit" class="btn salvar">Salvar</button>
+                    </div>
+
+                    <!-- Restante do formulário -->
+                    <div class="campo">
+                        <input type="checkbox" id="termos" name="termos" required>
+                        <label for="termos">
+                            Declaro que li e concordo com os 
+                            <span class="termos-condicoes">Termos e Condições</span> 
+                            e com a 
+                            <span class="politica-privacidade">Política de Privacidade</span>.
+                        </label>
+                    </div>
+
+                    <div class="btn-container">
+                        <button type="reset" class="btn cancelar">Cancelar</button>
+                        <button type="submit" class="btn inscrever">Fazer Inscrição</button>
+                    </div> 
+                </form>
+            </div>
+        </div>
+
+        <!-- quadrado -->
+        <div class="quadrado">
+            <img class="imagem-quadrado" src="imagens/Ilustration.png" alt="Figura trilhas">
+            <img class="logo-quadrado" src="imagens/logo-trilhas-inova.png" alt="Logo">
+            
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
